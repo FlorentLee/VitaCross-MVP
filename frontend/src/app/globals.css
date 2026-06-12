@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@layer base {
+  :root {
+    --primary: #2563EB;   /* Blue */
+    --primary-hover: #3B82F6;
+    --sidebar-bg: #0F172A; /* Dark Navy for Sidebar */
+    --sidebar-hover: #1E293B;
+    --sidebar-active: #2563EB;
+    
+    --bg-main: #F8FAFC;    /* Light gray background */
+    --card-bg: #FFFFFF;    /* Pure white cards */
+    
+    --text-main: #1E293B;  /* Very dark gray */
+    --text-muted: #64748B; /* Medium gray */
+    --text-light: #94A3B8; /* Lighter gray */
+    
+    --border-light: #E2E8F0;
+    --border-dark: #CBD5E1;
+
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger:  #EF4444;
+    --info:    #0EA5E9;
+    
+    --sidebar-width: 240px;
+  }
+
+  body {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Base custom styles translated from Prototype */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md text-sm font-medium cursor-pointer border transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white border-transparent shadow-sm hover:bg-[var(--primary-hover)] hover:shadow;
+  }
+  .btn-ghost {
+    @apply bg-white text-[var(--text-main)] border-[var(--border-dark)] shadow-sm hover:bg-gray-50 hover:text-[var(--primary)] hover:border-[var(--primary)];
+  }
+  
+  .content-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .content-scroll::-webkit-scrollbar-thumb {
+    background: var(--border-dark);
+    border-radius: 3px;
+  }
+  .content-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .screen {
+    @apply hidden;
+  }
+  .screen.active {
+    @apply block;
+  }
+}

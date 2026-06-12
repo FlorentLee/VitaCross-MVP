@@ -1,0 +1,26 @@
+services:
+  # FastAPI Backend Service
+  - type: web
+    name: vitacross-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite:///./data/zst_database.db
+      - key: PYTHON_VERSION
+        value: 3.11.0
+
+  # Next.js Frontend Service
+  - type: web
+    name: vitacross-frontend
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm run start
+    envVars:
+      - key: NEXT_PUBLIC_API_BASE_URL
+        value: https://vitacross-backend.onrender.com
+      - key: NODE_VERSION
+        value: 18.0.0

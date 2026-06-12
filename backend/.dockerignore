@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Config files
+.env
+.env.*
+
+# Data
+data/chroma_db/
+*.db
+*.sqlite3
+
+# Git
+.git/
+.gitignore
+
+# OS
+.DS_Store

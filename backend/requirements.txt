@@ -1,0 +1,12 @@
+# We will only rely on `pydantic` features available in the standard library and pydantic directly.
+# Let's adjust requirements to include pydantic-settings explicitly if needed, but for now we fallback to os.getenv.
+
+fastapi
+uvicorn
+openai>=1.0
+chromadb
+sqlalchemy
+python-multipart
+pydantic-settings
+google-generativeai
+
